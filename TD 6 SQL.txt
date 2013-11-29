@@ -1,0 +1,34 @@
+TD6 SQL
+Q1 :
+SELECT count(numfilm)
+FROM films, nationalite
+WHERE nomnationalite='Française' and films.codenationalite = nationalite.codenationalite;
+ 
+Q2 :
+SELECT codetypeage, nomfilm
+FROM films
+ORDER BY codetypeage;
+ 
+Q3 :
+SELECT count(nomfilm)
+FROM films, age
+WHERE films.codetypeage = age.codetypeage and age.typeage = 'Interdit aux moins de 16 ans';
+ 
+Q4 : 
+SELECT codetypefilm, count(numfilm)
+FROM films
+GROUP BY codetypefilm
+HAVING count(numfilm) > 4;
+ 
+
+Q5 :
+SELECT nomfilm
+FROM films
+ORDER BY nomfilm;
+ 
+Q6 :
+SELECT nomfilm, nomnationalite
+FROM films, nationalite
+WHERE films.codenationalite = nationalite.codenationalite
+ORDER BY nomnationalite;
+ 
